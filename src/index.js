@@ -30,10 +30,8 @@
     fetchRecipePage(url)
       .then(function(result) {
         var recipe = parseRecipePage(result[0]);
-        return createRecipeRecord(recipe, url);
-      })
-      .then(function(result) {
-        return fetchAndUploadRecipeImages(result);
+        var recipeRecord = createRecipeRecord(recipe, url);
+        return fetchAndUploadRecipeImages(recipeRecord);
       })
       .then(function(result) {
         return postRecipeRecord(result);
@@ -176,11 +174,11 @@
       });
   }
 
-  function postRecipeRecord(record) {
+  function postRecipeRecord(recipeRecord) {
     return kintone
       .api(kintone.api.url('/k/v1/record', true), 'POST', {
         app: kintone.app.getId(),
-        record: record
+        record: recipeRecord
       })
       .then(function(response) {
         return response;
