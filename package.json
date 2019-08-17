@@ -1,0 +1,10 @@
+{
+  "name": "kintone-recipe-scraping",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@cybozu/eslint-config": "^6.0.2",
+    "eslint": "^6.1.0"
+  }
+}
