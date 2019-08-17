@@ -23,7 +23,7 @@
     var url = document.querySelector('input[name="recipe_url"]').value;
     if (!url) return;
 
-    var spinner = new Spinner();
+    var spinner = new kintoneUIComponent.Spinner();
     document.body.appendChild(spinner.render());
     spinner.show();
 
